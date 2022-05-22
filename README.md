@@ -4,11 +4,12 @@ Changes the height of a paired ikea idasen desk
 ## About
 
 
+Reqires you to pair your Mycroft device with the desk manually ahead of time.
+
+
 ## Examples
-* "Raise my desk"
-* "Lower my desk"
-* "Raise my desk to 800 millimeters"
-* "Lower my desk to 800 millimeters"
+* "Raise desk to stand position"
+* "Lower desk to sit position"
 
 ## Credits
 Chris Ortner <chris@codexfons.com>
