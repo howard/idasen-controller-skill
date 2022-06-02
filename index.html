@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>Voice Assistant Skill Development with Mycroft</title>
 
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
@@ -16,8 +16,195 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section data-markdown>
+                    # Voice Assistant Skill Development with Mycroft
+                </section>
+                
+                <section>
+                    <section data-markdown>
+                        ## Agenda
+
+                        1. What's Mycroft?
+                        2. Example use case
+                        3. Code
+                        4. Demo
+                    </section>
+
+                    <section data-markdown>
+                        ### About me
+
+                        * I'm Chris 👋
+                        * **L**ead **S**earch **D**eveloper at Findologic
+                        * Jack of all trades
+                        * I like cycling, gardening, and making
+                    </section>
+                </section>
+
+                <section>
+                    <section data-markdown>
+                        ## What's [Mycroft](https://mycroft.ai/)?
+
+                        ![Mycroft Mark 1 voice assistant illustration](img/mycroft_mark_1.png)
+                    </section>
+
+                    <section data-markdown>
+                        ### What's Mycroft?
+
+                        * Open source voice assistant
+                        * Respects privacy by default
+                        * Mostly Python
+                        * Hardware:
+                          * All-in-one solutions
+                          * DIY (e.g. Raspberry Pi)
+                    </section>
+
+                    <section data-markdown>
+                        ### Capabilities
+
+                        * All the usual gimmicks
+                        * Command-style interaction
+                        * Dialog-style interaction
+                        * Media control
+                        * Smart home integration
+                          * e.g. via Home Assistant
+                    </section>
+
+                    <section>
+                        <h3>All-in-one hardware</h3>
+
+                        <img src="img/mycroft_mark_2.jpg" alt="Mycroft Mark 2" width="500">
+
+                        <p>~300 EUR</p>
+                    </section>
+
+                    <section>
+                        <h3>DIY Hardware</h3>
+
+                        <img src="img/diy_mycroft_front.jpg" alt="DIY Mycroft front view" width="350">
+                        <img src="img/diy_mycroft_back.jpg" alt="DIY Mycroft back view" width="350">
+
+                        <p>~150 EUR</p>
+                    </section>
+
+                    <section data-markdown>
+                        ### Mycroft Components
+
+                        * Wake word detection
+                          * PocketSphinx | Precise
+                        * Speech to text (STT)
+                          * Google | IBM | wit.ai | DeepSpeech (future)
+                        * Intent parser
+                          * Adapt | Padatious
+                        * Text to speech (TTS)
+                          * Mimic | Mimic2
+                        * *Skills*
+                    </section>
+                </section>
+
+
+                <section>
+                    <section data-markdown>
+                        ## Example Use Case
+
+                        ![IKEA IDASEN desk](img/idasen.avif)
+                    </section>
+
+                    <section data-markdown>
+                        ### IKEA IDÅSEN height-adjustable desk
+
+                        * Sturdiest height-adjustable desk`&lt;/opinion&gt;`
+                        * It has an App
+                        * It has Bluetooth
+                        * It has 3rd party clients and libraries
+                          * e.g. [rhyst/idasen-controller](https://github.com/rhyst/idasen-controller)
+                    </section>
+
+                    <section>
+                        <h3>Hack the desk</h3>
+
+                        <ol>
+                            <li>
+                                Install client:
+                                <code class="stretch"><pre>
+pip install idasen-controller
+</pre></code>
+                            </li>
+                            <li>Pair device with desk</li>
+                            <li>
+                                Configure the client:
+                                <code class="stretch"><pre>
+# ~/.config/idasen-controller/config.yaml
+mac_address: XX:XX:XX:XX:XX:XX
+favourites:
+  stand: 1105
+  sit: 737
+</pre></code>
+                            </li>
+                            <li>
+                                Make desk go bzzzzt:
+                                <code class="stretch"><pre>
+idasen-controller --move-to stand
+</pre></code>
+                            </li>
+                        </ol>
+                    </section>
+                </section>
+
+
+                <section>
+                    <section data-markdown>
+                        ## Code
+
+                        ![person throwing computer into the trash](img/code.gif)
+                    </section>
+
+                    <section data-markdown>
+                        ### GitHub
+
+                        [howard/idasen-controller-skill](https://github.com/howard/idasen-controller-skill/)
+                    </section>
+
+                    <section data-markdown>
+                        ### Workflow
+
+                        1.  Set up a Mycroft environment
+                        2.  Generate skill:
+                            `mycroft-msk create`
+                        3.  Define intents
+                        4.  Implement intent logic
+                    </section>
+
+                    <section data-markdown>
+                        ### Intents and entities
+
+                        * Intent: Examples for how a user's intent can be phrased
+                        * Entity: Dynamic parts of intent phrase
+                          * Numbers
+                          * Names
+                          * Custom entities, e.g. favorite desk positions
+                    </section>
+                </section>
+
+
+                <section>
+                    <section data-markdown>
+                        ## Demo
+                        ![closeup of rocket launching in slow motion](img/launch.gif)
+                    </section>
+
+                    <section data-markdown>
+                        ### Next steps
+
+                        * Unit tests
+                        * Interactive configuration
+                        * i18n
+                    </section>
+                </section>
+
+
+                <section>
+                    <p style="font-size: 40vh">🍔</p>
+                </section>
 			</div>
 		</div>
 
